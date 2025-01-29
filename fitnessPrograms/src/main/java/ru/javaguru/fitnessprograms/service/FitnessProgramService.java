@@ -28,7 +28,7 @@ public class FitnessProgramService {
                 .orElseThrow(() -> new RuntimeException("Программа с id " + programId + " не найдена"));
 
         ExerciseDto exerciseDto = restTemplate.getForObject(
-                "http://exercises/exercises/" + fitnessProgram.getExerciseId(),
+                "http://exercises-service/exercises/" + fitnessProgram.getExerciseId(),
                 ExerciseDto.class);
 
         FitnessProgramDto fitnessProgramDto = fitnessProgramMapper.toDto(fitnessProgram);
